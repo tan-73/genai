@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'mymaven'
+        jdk   'myjdk'
+    }
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Cloning repository'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('12th_Exp/calculator-maven') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('12th_Exp/calculator-maven') {
+                    sh 'mvn test'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            junit '12th_Exp/calculator-maven/target/surefire-reports/*.xml'
+        }
+        success {
+            echo 'All tests passed!'
+        }
+        failure {
+            echo 'Some tests failed!'
+        }
+    }
+}
