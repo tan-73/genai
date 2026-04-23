@@ -1,0 +1,10 @@
+Git commands -
+- git init
+- git config --global user.name ""
+- git config --global user.email ""
+- git status
+- git add <file>
+- git commit -m "<message>"
+- git log
+- gitk
+- 

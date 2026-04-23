@@ -1,0 +1,10 @@
+Git tagging and releases - 
+- git pull
+- git tag v1.0
+- git tag
+- git add -a v1.2 -m "version 1.2 created"'
+- git show v1.0
+- git tag -l "v1.*"
+- git push --tags
+- git tag -d v1.0
+- git push origin -d v1.0

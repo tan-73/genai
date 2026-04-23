@@ -1,0 +1,11 @@
+Github repo creation - 
+- git config --global user.name
+- git config --global user.email
+- create new repo in Github
+- git remote add origin <url>
+- push to github
+- make change in github
+- git fetch origin > git merge origin/master 
+OR
+- git pull origin master
+- 

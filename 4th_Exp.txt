@@ -1,0 +1,15 @@
+github collab using PRs - 
+- create github repo and push code
+- git clone <url>
+- create file in master branch
+- do some changes
+- git push origin master
+- git pull origin master
+- git branch feature-1
+- git checkout feature-1
+- modify files in feature branch
+- git push origin feature-1
+- open github and click create PR
+after merge, update local master
+- git pull origin master
+- git log --oneline
