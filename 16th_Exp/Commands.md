@@ -4,3 +4,4 @@
 3. docker run my-python-sample
 4. docker run -d -p 5020:5020 --name python-web my-python-app
 4. <ip>:5020
+5. docker run -d -p 5020:5020 --name my-python-app-container my-python-app
