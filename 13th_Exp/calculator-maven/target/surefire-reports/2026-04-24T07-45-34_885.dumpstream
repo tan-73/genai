@@ -1,4 +1,4 @@
-# Created at 2026-04-23T22:51:19.401
+# Created at 2026-04-24T07:45:35.162
 Boot Manifest-JAR contains absolute paths in classpath 'D:\BNMIT\6thSem\DevOps\Practice\13th_Exp\calculator-maven\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root
