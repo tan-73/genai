@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'mymaven'
+        jdk   'myjdk'
+    }
+
+    environment {
+        PROJECT_PATH = 'D:/BNMIT/6thSem/DevOps/Practice/9th_Exp/sample-app'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                dir("${env.PROJECT_PATH}") {
+                    bat 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir("${env.PROJECT_PATH}") {
+                    bat 'mvn test'
+                }
+            }
+        }
+
+        stage('Copy Reports') {
+            steps {
+                bat """
+                xcopy /Y /E "%PROJECT_PATH%\\target\\surefire-reports" "%WORKSPACE%\\reports\\"
+                """
+            }
+        }
+    }
+
+    post {
+        always {
+            junit 'reports/*.xml'
+        }
+        success {
+            echo 'All tests passed!'
+        }
+        failure {
+            echo 'Some tests failed!'
+        }
+    }
+}
